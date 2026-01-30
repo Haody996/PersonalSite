@@ -198,7 +198,9 @@ export default function Page() {
           <SectionTitle title="About" subtitle="What I do and how I work" />
           <div className="grid gap-6 md:grid-cols-2">
             <Panel title="Professional Background">
-              I build and maintain large-scale, compliance-driven applications. I’m comfortable owning features end-to-end: requirements → design → implementation → deployment → support.
+              I’m a full-stack software engineer working on large-scale, compliance-critical systems.
+              
+              My focus is building reliable, maintainable applications that support real users at scale—balancing product requirements, technical constraints, and long-term system health.
             </Panel>
             <Panel title="Technical Focus">
               Full-stack web apps (React + .NET), secure APIs, RBAC, and SQL performance. I like clean interfaces, testable code, and systems that are easy to operate.

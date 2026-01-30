@@ -1,0 +1,7 @@
+services:
+  qincard:
+    build: .
+    container_name: qincard
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3001:80"

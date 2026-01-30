@@ -1,25 +1,55 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
-echo "🚀 Deploying qincard.com..."
+echo "🚀 Deploying qincard.com (Docker + static out/)..."
 
-WEB_ROOT="/var/www/qincard.com"
+APP_DIR="$HOME/apps/qincard-world"
+SITE_URL="https://www.qincard.com"
+LOCAL_HEALTHCHECK="http://127.0.0.1:3001"
 
-echo "📦 Building Next.js site..."
+cd "$APP_DIR"
+
+# Optional: update code if git repo
+
+
+echo "📦 Installing deps and building..."
+npm ci
 npm run build
 
-echo "🧹 Clearing old site files..."
-sudo rm -rf "$WEB_ROOT"/*
+echo "✅ Build done. Checking out/ exists..."
+if [ ! -d "out" ]; then
+  echo "❌ out/ folder not found. Build did not produce a static export."
+  exit 1
+fi
 
-echo "📂 Copying new build..."
-sudo cp -r out/* "$WEB_ROOT"/
+echo "🐳 Rebuilding and restarting Docker container..."
+docker compose down
+docker compose up -d --build
 
-echo "🔐 Fixing permissions..."
-sudo chown -R www-data:www-data "$WEB_ROOT"
-sudo chmod -R 755 "$WEB_ROOT"
+# Retry function
+retry_curl () {
+  local url="$1"
+  local attempts="${2:-30}"
+  local sleep_s="${3:-1}"
 
-echo "🔄 Reloading Nginx..."
-sudo systemctl reload nginx
+  for i in $(seq 1 "$attempts"); do
+    if curl -4 -fsS -I "$url" >/dev/null 2>&1; then
+      return 0
+    fi
+    echo "⏳ Waiting for $url ($i/$attempts)..."
+    sleep "$sleep_s"
+  done
 
-echo "✅ Deployment complete!"
-echo "🌍 Live at: https://qincard.com"
+  echo "❌ Health check failed: $url"
+  return 1
+}
+
+echo "🩺 Health check (container)..."
+retry_curl "$LOCAL_HEALTHCHECK" 30 1
+echo "✅ Container responds on $LOCAL_HEALTHCHECK"
+
+echo "🩺 Health check (public URL)..."
+retry_curl "$SITE_URL" 30 1
+echo "✅ Live check passed: $SITE_URL"
+
+echo "🎉 Deployment complete!"
