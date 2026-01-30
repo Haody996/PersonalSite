@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+QinCard — Personal Portfolio
 
-## Getting Started
+A modern, production-ready personal portfolio website built with Next.js, TypeScript, and Tailwind CSS, deployed as a static site on a VPS with Nginx.
 
-First, run the development server:
+Designed to present professional experience, projects, and technical skills clearly for software engineering roles.
 
-```bash
+🔗 Live Site
+
+👉 https://www.qincard.com
+
+✨ Features
+
+⚡ Next.js (App Router) with static export
+
+🎨 Tailwind CSS v4 for clean, responsive styling
+
+🧩 Modular, readable React components
+
+🌙 Dark, dashboard-inspired UI
+
+🧠 Scroll-aware navigation (section highlighting)
+
+📄 Resume download support
+
+🚀 Deployed on VPS with Nginx (no server runtime required)
+
+🛠 Tech Stack
+
+Frontend
+
+Next.js
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+Build & Tooling
+
+Node.js
+
+PostCSS
+
+Static site export (output: "export")
+
+Infrastructure
+
+Ubuntu VPS (Hostinger)
+
+Nginx
+
+GitHub (SSH auth)
+
+📁 Project Structure
+qincard-world/
+├── src/
+│   └── app/
+│       ├── page.tsx        # Main homepage
+│       ├── layout.tsx      # Root layout
+│       └── globals.css     # Tailwind + custom styles
+├── public/
+│   ├── avatar.jpg
+│   └── resume.pdf
+├── tailwind.config.ts
+├── postcss.config.mjs
+├── deploy.sh
+└── README.md
+
+🚀 Local Development
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Then open:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
+🏗 Build (Static Export)
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This generates a fully static site in the out/ directory.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📦 Deployment
 
-## Deploy on Vercel
+The site is deployed manually using a shell script and Nginx.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+./deploy.sh
