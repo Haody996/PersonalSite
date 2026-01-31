@@ -13,9 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hao Qin — Full-Stack Software Engineer",
-  description:
-    "Full-stack software engineer specializing in React, .NET, and SQL. Building reliable, scalable, compliance-critical systems.",
+  title: "Hao Qin - Full-Stack Software Developer",
+  description: "Full-stack software engineer specializing in React, .NET, and SQL. Building reliable, scalable, compliance-critical systems.",
 };
 
 export default function RootLayout({
