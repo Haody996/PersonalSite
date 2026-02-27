@@ -52,16 +52,16 @@ const PROJECTS: ProjectEntry[] = [
     tags: ["LLMs", "NLP", "Research", "Healthcare AI", "Finance AI"],
   },
   {
-    title: "Full-Stack Instagram Web App",
-    dates: "2022",
-    desc: "Designed UI/UX from scratch in Figma and built a full-stack Instagram clone as a React SPA with state management, routing, and real-time notifications. Implemented CRUD REST APIs with Node.js/Express, MongoDB schema for thousands of records, and AWS cloud storage.",
-    tags: ["React", "Node.js", "Express", "MongoDB", "AWS"],
-  },
-  {
     title: "Project Manager & TA — Web App Course",
     dates: "2023",
     desc: "Led student groups using Agile methodology for web application projects at Penn. Helped teach single-page application development, tracked deliverables, and coordinated team workload and collaboration across the semester.",
     tags: ["JavaScript", "MongoDB", "Agile"],
+  },
+  {
+    title: "Full-Stack Instagram Web App",
+    dates: "2022",
+    desc: "Designed UI/UX from scratch in Figma and built a full-stack Instagram clone as a React SPA with state management, routing, and real-time notifications. Implemented CRUD REST APIs with Node.js/Express, MongoDB schema for thousands of records, and AWS cloud storage.",
+    tags: ["React", "Node.js", "Express", "MongoDB", "AWS"],
   },
 ];
 
