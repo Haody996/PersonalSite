@@ -40,6 +40,13 @@ const EXPERIENCE: ExperienceEntry[] = [
 
 const PROJECTS: ProjectEntry[] = [
   {
+    title: "NightlyMenu — Household Meal Planner",
+    href: "https://dinnerly.menu/info",
+    dates: "2025",
+    desc: "A household meal planning app with a restaurant menu-style UI. Users add dishes with photos and ingredients, plan tonight's dinner, and coordinate with household members via invite codes. Features Google Sign-In, email notifications, and a shared household menu.",
+    tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Express", "SQLite", "JWT", "TanStack Query"],
+  },
+  {
     title: "Automated Trading System",
     dates: "2025",
     desc: "Designed and deployed an automated trading system integrating broker APIs for order execution and real-time monitoring. Focused on system reliability and API-driven automation, executing real-world trades during controlled testing.",
