@@ -315,7 +315,7 @@ export default function Page() {
                 <span className="text-slate-200 font-medium">Software Developer II</span> at
                 the County of Orange, shipping .NET and React features across county-wide
                 platforms that serve over{" "}
-                <span className="text-slate-200 font-medium">1,000,000 users</span>.
+                <span className="text-slate-200 font-medium">3 million users</span>.
               </p>
               <p>
                 I specialize in building web apps as well as using{" "}
