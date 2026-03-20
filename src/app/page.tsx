@@ -40,6 +40,13 @@ const EXPERIENCE: ExperienceEntry[] = [
 
 const PROJECTS: ProjectEntry[] = [
   {
+    title: "JobsClaw — AI Job Digest",
+    href: "https://jobsclaw.net/info",
+    dates: "2026",
+    desc: "An AI-powered daily job assistant that scrapes fresh LinkedIn listings, ranks the top 5 matches against your resume using Gemini AI with a compatibility score, and delivers a morning digest to your inbox. Features Google Sign-In, BullMQ job scheduling, and a match history dashboard.",
+    tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Express", "PostgreSQL", "Prisma", "BullMQ", "Redis", "Gemini AI"],
+  },
+  {
     title: "NightlyMenu — Household Meal Planner",
     href: "https://dinnerly.menu/info",
     dates: "2026",
